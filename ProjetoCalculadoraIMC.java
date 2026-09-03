@@ -1,21 +1,23 @@
-import java.util.Scanner;
-
 public class ProjetoCalculadoraIMC {
+
+    double peso;
+    double altura;
+
+    public ProjetoCalculadoraIMC(double peso, double altura) {
+        this.peso = peso;
+        this.altura = altura;
+    }
+
+    public double calcularIMC() {
+        return peso / (altura * altura);
+    }
 
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
+        ProjetoCalculadoraIMC pessoa = new ProjetoCalculadoraIMC(67, 1.65);
 
-        System.out.print("Digite seu peso em kg: ");
-        double peso = scanner.nextDouble();
-
-        System.out.print("Digite sua altura em metros: ");
-        double altura = scanner.nextDouble();
-
-        double imc = peso / (altura * altura);
+        double imc = pessoa.calcularIMC();
 
         System.out.printf("Seu IMC é: %.2f%n", imc);
-
-        scanner.close();
     }
 }
